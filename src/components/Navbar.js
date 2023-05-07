@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export default function Navbar(prop) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${prop.mode} bg-${prop.mode}`}>
       <div className="container">
-  <a className="navbar-brand" href="/">{prop.title}</a>
+  <Link className="navbar-brand" to="/">{prop.title}</Link>
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
     <li className="nav-item">
-        {/* <Link className="nav-link" to="/">Home</Link> */}
-        <a className="nav-link" href="/">Home</a>
+        <Link className="nav-link" to="/">Home</Link>
+        {/* <a className="nav-link" href="/">Home</a> */}
       </li> 
-      {/* <li className="nav-item">
+      <li className="nav-item">
         <Link className="nav-link" to="/About">{prop.about}</Link>
-      </li> */}
+      </li>
      
     </ul>
     {/* <form className="form-inline my-2 my-lg-0">

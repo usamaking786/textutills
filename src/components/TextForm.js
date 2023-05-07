@@ -36,16 +36,17 @@ setText(newText);
     style={{backgroundColor:props.mode==='dark'?'#304f6d':'white',color:props.mode==='light'?'black':'white'}}
      id="exampleFormControlTextarea1" rows="6"></textarea>
     </div>
-    <button className='btn btn-primary' onClick={onClickHandle}>To UpperCase</button>
-    <button className='btn btn-primary mx-1' onClick={onClickLoHandle}>To LowerCase</button>
-    <button className='btn btn-primary my-2' onClick={onClickClear}>Clear Text</button>
+    <button className='btn btn-primary mx-1' onClick={onClickHandle}>To UpperCase</button>
+    <button className='btn btn-primary mx-1 my-1 ' onClick={onClickLoHandle}>To LowerCase</button>
+    <button className='btn btn-primary mx-1 my-1' onClick={onClickClear}>Clear Text</button>
 </div>
 <div className={`text-${props.mode==='light'?'dark':'light'}`}>
     <h3>Summary</h3>
-    <p>Number of Words are {text.split(" ").length} and Characters are {text.length}</p>
-    <p>Reading time: {0.008 * text.split(" ").length} Minutes to read this paragraph </p>
+    {/* Number of Words {text.split(" ").filter((element)=>{ return element.length!=0}).length} */}
+    <p>Number of Words are {text.split(" ").filter((element)=>{ return element.length!==0}).length} and Characters are {text.length}</p>
+    <p>Reading time: {0.008 * text.split(" ").filter((element)=>{ return element.length!==0}).length} Minutes to read this paragraph </p>
     <h3>Perview</h3>
-    <p>{text.length>0?text:'Please enter text above in the textbox to preview'}</p>
+    <p>{text.length>0?text:'Nothing to Preview'}</p>
 </div>
 </>
     );
